@@ -1,0 +1,36 @@
+{
+  "name": "dsh-plugin-ffxiv",
+  "version": "0.3.0",
+  "private": true,
+  "description": "FF14 中文查询工具插件：21 个模型可调用工具，覆盖物品/板子/配方成本/角色/FFLogs/ET/天气/房屋/招募/青魔/公告/职业循环/副本攻略",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "node dist/scripts/verify.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.2.1-rc.3"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.2.1-rc.3",
+    "@types/node": "^22.20.5",
+    "typescript": "~5.9.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
